@@ -7,6 +7,131 @@ for i in {11..34}; do
 EOF
 
     case $i in
+        1)
+            echo 'echo "Enter a number:"' >> ${i}.sh
+            echo 'read num' >> ${i}.sh
+            echo 'if [ $((num % 2)) -eq 0 ]; then' >> ${i}.sh
+            echo '    echo "$num is even"' >> ${i}.sh
+            echo 'else' >> ${i}.sh
+            echo '    echo "$num is odd"' >> ${i}.sh
+            echo 'fi' >> ${i}.sh
+            ;;
+        2)
+            echo 'echo "Enter a year:"' >> ${i}.sh
+            echo 'read year' >> ${i}.sh
+            echo 'if [ $((year % 4)) -eq 0 ] && [ $((year % 100)) -ne 0 ] || [ $((year % 400)) -eq 0 ]; then' >> ${i}.sh
+            echo '    echo "$year is a leap year"' >> ${i}.sh
+            echo 'else' >> ${i}.sh
+            echo '    echo "$year is not a leap year"' >> ${i}.sh
+            echo 'fi' >> ${i}.sh
+            ;;
+        3)
+            echo 'echo "Enter the radius of the circle:"' >> ${i}.sh
+            echo 'read radius' >> ${i}.sh
+            echo 'area=$(echo "3.14 * $radius * $radius" | bc)' >> ${i}.sh
+            echo 'circumference=$(echo "2 * 3.14 * $radius" | bc)' >> ${i}.sh
+            echo 'echo "Area of the circle: $area"' >> ${i}.sh
+            echo 'echo "Circumference of the circle: $circumference"' >> ${i}.sh
+            ;;
+        4)
+            echo 'echo "Enter a number:"' >> ${i}.sh
+            echo 'read num' >> ${i}.sh
+            echo 'reverse=$(echo $num | rev)' >> ${i}.sh
+            echo 'if [ $num -eq $reverse ]; then' >> ${i}.sh
+            echo '    echo "$num and its reverse are the same"' >> ${i}.sh
+            echo 'else' >> ${i}.sh
+            echo '    echo "$num and its reverse are not the same"' >> ${i}.sh
+            echo 'fi' >> ${i}.sh
+            ;;
+        5)
+            echo 'echo "Enter a string:"' >> ${i}.sh
+            echo 'read str' >> ${i}.sh
+            echo 'reverse=$(echo $str | rev)' >> ${i}.sh
+            echo 'if [ "$str" = "$reverse" ]; then' >> ${i}.sh
+            echo '    echo "$str is a palindrome"' >> ${i}.sh
+            echo 'else' >> ${i}.sh
+            echo '    echo "$str is not a palindrome"' >> ${i}.sh
+            echo 'fi' >> ${i}.sh
+            ;;
+        6)
+            echo 'echo "Enter numbers separated by space:"' >> ${i}.sh
+            echo 'read -a numbers' >> ${i}.sh
+            echo 'sum_odd=0' >> ${i}.sh
+            echo 'sum_even=0' >> ${i}.sh
+            echo 'for num in "${numbers[@]}"; do' >> ${i}.sh
+            echo '    if [ $((num % 2)) -eq 0 ]; then' >> ${i}.sh
+            echo '        sum_even=$((sum_even + num))' >> ${i}.sh
+            echo '    else' >> ${i}.sh
+            echo '        sum_odd=$((sum_odd + num))' >> ${i}.sh
+            echo '    fi' >> ${i}.sh
+            echo 'done' >> ${i}.sh
+            echo 'echo "Sum of odd numbers: $sum_odd"' >> ${i}.sh
+            echo 'echo "Sum of even numbers: $sum_even"' >> ${i}.sh
+            ;;
+        7)
+            echo 'echo "Enter the coefficients of quadratic equation (a, b, c):"' >> ${i}.sh
+            echo 'read a b c' >> ${i}.sh
+            echo 'd=$((b * b - 4 * a * c))' >> ${i}.sh
+            echo 'if [ $d -gt 0 ]; then' >> ${i}.sh
+            echo '    root1=$(echo "scale=2; (-1 * $b + sqrt($d)) / (2 * $a)" | bc)' >> ${i}.sh
+            echo '    root2=$(echo "scale=2; (-1 * $b - sqrt($d)) / (2 * $a)" | bc)' >> ${i}.sh
+            echo '    echo "Roots are real and different: $root1, $root2"' >> ${i}.sh
+            echo 'elif [ $d -eq 0 ]; then' >> ${i}.sh
+            echo '    root=$(echo "scale=2; -1 * $b / (2 * $a)" | bc)' >> ${i}.sh
+            echo '    echo "Roots are real and equal: $root"' >> ${i}.sh
+            echo 'else' >> ${i}.sh
+            echo '    real_part=$(echo "scale=2; -1 * $b / (2 * $a)" | bc)' >> ${i}.sh
+            echo '    imaginary_part=$(echo "scale=2; sqrt(-1 * $d) / (2 * $a)" | bc)' >> ${i}.sh
+            echo '    echo "Roots are complex: $real_part + i$imaginary_part, $real_part - i$imaginary_part"' >> ${i}.sh
+            echo 'fi' >> ${i}.sh
+            ;;
+        8)
+            echo 'echo "Enter a number:"' >> ${i}.sh
+            echo 'read num' >> ${i}.sh
+            echo 'n=$num' >> ${i}.sh
+            echo 'sum=0' >> ${i}.sh
+            echo 'while [ $num -gt 0 ]; do' >> ${i}.sh
+            echo '    digit=$((num % 10))' >> ${i}.sh
+            echo '    sum=$((sum + digit * digit * digit))' >> ${i}.sh
+            echo '    num=$((num / 10))' >> ${i}.sh
+            echo 'done' >> ${i}.sh
+            echo 'if [ $sum -eq $n ]; then' >> ${i}.sh
+            echo '    echo "$n is an Armstrong number"' >> ${i}.sh
+            echo 'else' >> ${i}.sh
+            echo '    echo "$n is not an Armstrong number"' >> ${i}.sh
+            echo 'fi' >> ${i}.sh
+            ;;
+        9)
+            echo 'echo "Enter a number:"' >> ${i}.sh
+            echo 'read num' >> ${i}.sh
+            echo 'is_prime="true"' >> ${i}.sh
+            echo 'for ((i=2; i<=num/2; i++)); do' >> ${i}.sh
+            echo '    if [ $((num % i)) -eq 0 ]; then' >> ${i}.sh
+            echo '        is_prime="false"' >> ${i}.sh
+            echo '        break' >> ${i}.sh
+            echo '    fi' >> ${i}.sh
+            echo 'done' >> ${i}.sh
+            echo 'if [ "$is_prime" = "true" ]; then' >> ${i}.sh
+            echo '    echo "$num is a prime number"' >> ${i}.sh
+            echo 'else' >> ${i}.sh
+            echo '    echo "$num is not a prime number"' >> ${i}.sh
+            echo 'fi' >> ${i}.sh
+            ;;
+        10)
+            echo 'echo "Prime numbers between 1 and 50:"' >> ${i}.sh
+            echo 'for ((num=2; num<=50; num++)); do' >> ${i}.sh
+            echo '    is_prime="true"' >> ${i}.sh
+            echo '    for ((i=2; i<=num/2; i++)); do' >> ${i}.sh
+            echo '        if [ $((num % i)) -eq 0 ]; then' >> ${i}.sh
+            echo '            is_prime="false"' >> ${i}.sh
+            echo '            break' >> ${i}.sh
+            echo '        fi' >> ${i}.sh
+            echo '    done' >> ${i}.sh
+            echo '    if [ "$is_prime" = "true" ]; then' >> ${i}.sh
+            echo '        echo -n "$num "' >> ${i}.sh
+            echo '    fi' >> ${i}.sh
+            echo 'done' >> ${i}.sh
+            ;;
         11)
             echo 'echo "Enter a number:"' >> ${i}.sh
             echo 'read num' >> ${i}.sh
