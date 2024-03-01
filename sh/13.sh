@@ -1,3 +1,27 @@
 #!/bin/bash
 
-awk '{if ($3 >= 90) print $0, "A"; else if ($3 >= 80) print $0, "B"; else if ($3 >= 70) print $0, "C"; else if ($3 >= 60) print $0, "D"; else print $0, "F"}' grades.txt
+calculate_grade() {
+    if [ $1 -ge 90 ]; then
+        grade="A"
+    elif [ $1 -ge 80 ]; then
+        grade="B"
+    elif [ $1 -ge 70 ]; then
+        grade="C"
+    elif [ $1 -ge 60 ]; then
+        grade="D"
+    else
+        grade="F"
+    fi
+    echo $grade
+}
+
+echo "Enter student name:"
+read name
+echo "Enter student's mark:"
+read mark
+
+grade=$(calculate_grade $mark)
+
+echo "Student Name: $name"
+echo "Student mark: $mark"
+echo "Student Grade: $grade"

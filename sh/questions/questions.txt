@@ -1,34 +1,34 @@
-1. Write a Shell program to check the given number is even or odd.
-2. Write a Shell program to check a leap year.
-3. Write a Shell program to find the area and circumference of a circle.
-4. Write a Shell program to check the given number and its reverse are same.
-5. Write a Shell program to check the given string is palindrome or not.
-6. Write a Shell program to find the sum of odd and even numbers from a set of numbers.
-7. Write a Shell program to find the roots of a quadratic equation.
-8. Write a Shell program to check the given integer is Armstrong number or not.
-9. Write a Shell program to check the given integer is prime or not.
-10. Write a Shell program to generate prime numbers between 1 and 50.
-11. Write a Shell program to find the sum of square of individual digits of a number.
-12. Write a Shell program to count the number of vowels in a line of text.
-13. Write a Shell program to display student grades.
-14. Write a Shell program to find the smallest and largest numbers from a set of numbers.
-15. Write a Shell program to find the smallest digit from a number.
-16. Write a Shell program to find the sum of all numbers between 50 and 100, which are divisible by 3 and not divisible by 5.
-17. Write a Shell program to find the second highest number from a set of numbers.
-18. Write a Shell program to find the sum of digits of a number using function.
-19. Write a Shell program to print the reverse of a number using function.
-20. Write a Shell program to find the factorial of a number using for loop.
-21. Write a Shell program to generate Fibonacci series.
-22. Write a shell script, which receives two filenames as arguments. It checks whether the two files contents are same or not. If they are same then second file is deleted.
-23. Write a Menu driven Shell script that Lists current directory, Prints Working Directory, displays Date and displays Users logged in.
-24. Shell script to check executable rights for all files in the current directory, if a file does not have the execute permission then make it executable.
-25. Write a Shell program to generate all combinations of 1, 2, and 3 using loop.
-26. Write a Shell program to create the number series.
-27. Write a Shell program to create Pascal’s triangle.
-28. Write a Decimal to Binary Conversion Shell Script.
-29. Write a Shell Script to Check Whether a String is Palindrome or not.
-30. Write a shell script to find out the unique words in a file and also count the occurrence of each of these words.
-31. Write a shell script to get the total count of the word “Linux” in all the “.txt” files and also across files present in subdirectories.
-32. Write a shell script to validate password strength. Here are a few assumptions for the password string. ( Length – minimum of 8 characters. Contain both alphabet and number. Include both the small and capital case letters.)
-33. Write a shell script to print the count of files and subdirectories in the specified directory.
-34. Write a shell script to reverse the list of strings and reverse each string further in the list.
+1) Write a Shell program to check the given number is even or odd.
+2) Write a Shell program to check a leap year.
+3) Write a Shell program to find the area and circumference of a circle.
+4) Write a Shell program to check the given number and its reverse are same.
+5) Write a Shell program to check the given string is palindrome or not.
+6) Write a Shell program to find the sum of odd and even numbers from a set of numbers.
+7) Write a Shell program to find the roots of a quadratic equation.
+8) Write a Shell program to check the given integer is Armstrong number or not.
+9) Write a Shell program to check the given integer is prime or not.
+10) Write a Shell program to generate prime numbers between 1 and 50.
+11) Write a Shell program to find the sum of square of individual digits of a number.
+12) Write a Shell program to count the number of vowels in a line of text.
+13) Write a Shell program to display student grades.
+14) Write a Shell program to find the smallest and largest numbers from a set of numbers.
+15) Write a Shell program to find the smallest digit from a number.
+16) Write a Shell program to find the sum of all numbers between 50 and 100, which are divisible by 3 and not divisible by 5.
+17) Write a Shell program to find the second highest number from a set of numbers.
+18) Write a Shell program to find the sum of digits of a number using function.
+19) Write a Shell program to print the reverse of a number using function.
+20) Write a Shell program to find the factorial of a number using for loop.
+21) Write a Shell program to generate Fibonacci series.
+22) Write a shell script, which receives two filenames as arguments. It checks whether the two files contents are same or not. If they are same then second file is deleted.
+23) Write a Menu driven Shell script that Lists current directory, Prints Working Directory, displays Date and displays Users logged in.
+24) Shell script to check executable rights for all files in the current directory, if a file does not have the execute permission then make it executable.
+25) Write a Shell program to generate all combinations of 1, 2, and 3 using loop.
+26) Write a Shell program to create the number series.
+27) Write a Shell program to create Pascal’s triangle.
+28) Write a Decimal to Binary Conversion Shell Script.
+29) Write a Shell Script to Check Whether a String is Palindrome or not.
+30) Write a shell script to find out the unique words in a file and also count the occurrence of each of these words.
+31) Write a shell script to get the total count of the word “Linux” in all the “.txt” files and also across files present in subdirectories.
+32) Write a shell script to validate password strength. Here are a few assumptions for the password string. ( Length – minimum of 8 characters. Contain both alphabet and number. Include both the small and capital case letters.)
+33) Write a shell script to print the count of files and subdirectories in the specified directory.
+34) Write a shell script to reverse the list of strings and reverse each string further in the list.
