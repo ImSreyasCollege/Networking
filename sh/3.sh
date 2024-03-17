@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo "Enter the radius of the circle:"
 read radius
 area=$(echo "3.1415 * ($radius ^ 2)" | bc)
