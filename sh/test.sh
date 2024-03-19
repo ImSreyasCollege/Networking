@@ -1,1 +1,3 @@
-test=("hello" "how" "are" "you")
+n=12345
+
+echo ${n:0:-1}
