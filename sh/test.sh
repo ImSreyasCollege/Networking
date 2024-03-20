@@ -1,3 +1,2 @@
-n=12345
+read -p "Enter numbers : " -a numbers
 
-echo ${n:0:-1}
