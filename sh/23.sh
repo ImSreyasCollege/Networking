@@ -16,7 +16,7 @@ select opt in "List current directory" "Print working directory" "Display date" 
             who
             ;;
         "Exit")
-            break
+            exit
             ;;
         *)
             echo "Invalid option"
