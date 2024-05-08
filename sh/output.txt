@@ -1,0 +1,239 @@
+program number 22
+
+#!/bin/bash
+
+if [ $# -ne 2 ]; then
+    echo "Try : $0 <file1> <file2>"
+    exit 0
+fi
+if cmp -s $1 $2; then
+    echo "Files are the same. Deleting $2"
+    rm $2
+else
+    echo "Files are different"
+fi
+
+
+----------------------------------------
+
+
+program number 23
+
+#!/bin/bash
+
+PS3="Select option: "
+select opt in "List current directory" "Print working directory" "Display date" "Display users logged in" "Exit"; do
+    case $opt in
+        "List current directory")
+            ls
+            ;;
+        "Print working directory")
+            pwd
+            ;;
+        "Display date")
+            date
+            ;;
+        "Display users logged in")
+            who
+            ;;
+        "Exit")
+            exit
+            ;;
+        *)
+            echo "Invalid option"
+            ;;
+    esac
+done
+
+
+----------------------------------------
+
+
+program number 24
+
+#!/bin/bash
+
+for file in *; do
+    if [[ -f $file && ! -x $file ]]; then
+        chmod u+rwx "$file"
+        echo "$file is made executable"
+    fi
+done
+
+
+----------------------------------------
+
+
+program number 25
+
+#!/bin/bash
+
+for i in 1 2 3; do
+    for j in 1 2 3; do
+        for k in 1 2 3; do
+            echo "$i$j$k"
+        done
+    done
+done
+
+
+----------------------------------------
+
+
+program number 26
+
+#!/bin/bash
+
+echo "Enter the number of terms:"
+read n
+echo "Number series:"
+for ((i=1; i<=n; i++)); do
+    echo -n "$i "
+done
+echo ""
+
+
+----------------------------------------
+
+
+program number 27
+
+#!/bin/bash
+
+echo "Enter the number of rows:"
+read rows
+for ((i=0; i<rows; i++)); do
+    for ((j=0; j<=i; j++)); do
+        if [ $j -eq 0 ] || [ $i -eq $j ]; then
+            coef=1
+        else
+            num=$((i-j+1))
+            den=$j
+            coef=$((coef * num / den))
+        fi
+        echo -n "$coef "
+    done
+    echo
+done
+
+
+----------------------------------------
+
+
+program number 28
+
+#!/bin/bash
+
+echo "Enter a decimal number:"
+read decimal
+echo "Binary conversion: $(echo "obase=2; $decimal" | bc)"
+
+
+----------------------------------------
+
+
+program number 29
+
+#!/bin/bash
+
+echo "Enter a string:"
+read str
+reverse=$(echo $str | rev)
+if [ "$str" = "$reverse" ]; then
+    echo "$str is a palindrome"
+else
+    echo "$str is not a palindrome"
+fi
+
+
+----------------------------------------
+
+
+program number 30
+
+#!/bin/bash
+
+echo "Enter file name:"
+read filename
+awk '{for(i=1;i<=NF;i++) a[$i]++} END {for(k in a) print k, a[k]}' $filename
+
+
+----------------------------------------
+
+
+program number 31
+
+#!/bin/bash
+
+echo "Enter directory path:"
+read dir
+grep -roh "Linux" $dir | wc -w
+
+----------------------------------------
+
+
+program number 32
+
+#!/bin/bash
+
+echo "Enter password:"
+read password
+isStrong=true
+if [[ ${#password} -lt 8 ]]; then
+    echo "Password length should be at least 8 characters"
+    isStrong=false
+fi
+if ! [[ $password =~ [0-9] ]]; then
+    echo "Password should contain at least one digit"
+    isStrong=false
+fi
+if ! [[ $password =~ [A-Z] ]]; then
+    echo "Password should contain at least one uppercase letter"
+    isStrong=false
+fi
+if ! [[ $password =~ [a-z] ]]; then
+    echo "Password should contain at least one lowercase letter"
+    isStrong=false
+fi
+if $isStrong; then 
+    echo "Password is strong..."
+else 
+    echo "Password is not strong..."
+fi
+
+
+----------------------------------------
+
+
+program number 33
+
+#!/bin/bash
+
+echo "Enter directory path:"
+read dir
+echo "Number of files and subdirectories: $(find $dir -type d -or -type f | wc -l)"
+
+
+----------------------------------------
+
+
+program number 34
+
+#!/bin/bash
+
+echo "Enter strings separated by space:"
+read -a strings
+
+leng=${#strings[@]}
+echo $leng
+reversed_strings=()
+for ((i=($leng-1); i>=0; i--)); do
+    reversed_strings+=($(echo ${strings[i]} | rev))
+done
+
+echo "Initial array : ${strings[@]}"
+echo -n "Reversed list of strings: ${reversed_strings[@]}"
+
+
+
+
