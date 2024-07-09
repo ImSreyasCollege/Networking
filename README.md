@@ -78,7 +78,25 @@ echo "Odd sum is : $odd_sum"
 ### 7) quadratic equation
 
 ```shell
-coming...
+read -p "Enter the coefficients (a, b, c) of quadratic equation : " a b c
+dis=$((b*b - 4*a*c))
+if [[ $dis -gt 0 ]]; then 
+    echo "Roots are real and different"
+    root1=$(echo "(-($b) + sqrt($dis))/(2*$a)" | bc -l)
+    root2=$(echo "(-($b) - sqrt($dis))/(2*$a)" | bc -l)
+    echo "root1 = $root1"
+    echo "root2 = $root2"
+elif [[ $dis -eq 0 ]]; then 
+    echo "Roots are real and equal"
+    root=$(echo "-($b)/(2*$a)" | bc -l)
+    echo "root1 = root2 = $root"
+else 
+    echo "Roots are complex and different"
+    real=$(echo "-($b)/(2*$a)" | bc -l)
+    imag=$(echo "(-1*$dis)/(2*$a)" | bc -l)
+    echo "root1 = $real + ${imag}i"
+    echo "root2 = $real - ${imag}i"
+fi
 ```
 ##
 
@@ -366,10 +384,23 @@ done
 ```
 ##
 
-### 27) title
+### 27) pascals triangle
 
 ```shell
-coming...
+read -p "Enter the number of rows : " rows
+for ((i=0; i<rows; i++)); do 
+    for ((j=0; j<=i; j++)); do
+        if [[ $j -eq 0 ]] || [[ $i -eq $j ]]; then
+            val=1
+        else
+            num=$((i-j+1))
+            den=$j
+            val=$((val * num / den))
+        fi
+        echo -n "$val "
+    done
+    echo
+done
 ```
 ##
 
@@ -401,31 +432,64 @@ awk '{for(i=0; i<=NF; i++) a[$i]++} END {for(k in a) print k, a[k]}' $filename
 ```
 ##
 
-### 31) title
+### 31) search keyword in directory files
 
 ```shell
-coming...
+read -p "Enter the directory path : " path
+read -p "Enter a keyword to search : " keyword
+grep -roh "$keyword" "$path" | wc -l
 ```
 ##
 
-### 32) title
+### 32) password validation
 
 ```shell
-coming...
+read -p "Enter a password : " password
+flag=false
+echo
+if ! [[ $password =~ [a-z] ]]; then
+    echo "Password should contain lowercase characters"
+    flag=true
+fi
+if ! [[ $password =~ [A-Z] ]]; then
+    echo "Password should contain uppercase characters"
+    flag=true
+fi
+if ! [[ $password =~ [0-9] ]]; then
+    echo "Password should contain numbers"
+    flag=true
+fi
+if ! [[ $password =~ [\#\$\%\&\@] ]]; then
+    echo "Password should contain special characters"
+    flag=true
+fi
+if $flag; then
+    echo 
+    echo "Password is not Strong"
+else 
+    echo "Password is Strong"
+fi
 ```
 ##
 
-### 33) title
+### 33) count files and subdirectories
 
 ```shell
-coming...
+read -p "Enter the directory path : " path
+echo "Number of files and subdirectories : $(find $path -type f -or -type d | wc -l)"
 ```
 ##
 
-### 34) title
+### 34) reverse both string and its order in a list
 
 ```shell
-coming...
+read -p "Enter a strings seperated by spaces : " str
+r_str=()
+for ((i=${#str[@]}-1; i>=0;i--)); do
+    r_str+=($(echo ${str[$i]} | rev))
+done
+echo "first array is : ${str[@]}"
+echo "modified array is : ${r_str[@]}"
 ```
 ##
 
