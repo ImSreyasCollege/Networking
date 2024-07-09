@@ -251,17 +251,23 @@ echo "Sum is : $sum"
 ```
 ##
 
-### 19) title
+### 19) reverse of a number
 
 ```shell
-coming...
+read -p "Enter a number : " num
+echo "Reverse of $num is : $(echo $num | rev)"
 ```
 ##
 
-### 20) title
+### 20) factorial
 
 ```shell
-coming...
+read -p "Enter a number : " num
+fact=1
+for ((i=1; i<=num; i++)); do
+    fact=$((fact * i))
+done
+echo "Factorial of $num is : $fact"
 ```
 ##
 
