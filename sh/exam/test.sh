@@ -1,10 +1,6 @@
 function infinate() {
-    read -p "Enter a string : " str
-    if [[ $str = $(echo $str | rev) ]]; then
-        echo "$str is palindrome"  
-    else
-        echo "$str is not palindrome"  
-    fi
+    read -p "Enter a filename : " filename
+    awk '{for(i=0; i<=NF; i++) a[$i]++} END {for(k in a) print k, a[k]}' $filename
 }
 
 # while true; do infinate; done
