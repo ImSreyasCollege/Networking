@@ -271,45 +271,98 @@ echo "Factorial of $num is : $fact"
 ```
 ##
 
-### 21) title
+### 21) fibonacci series
 
 ```shell
-coming...
+read -p "Enter the number of terms : " terms
+a=0
+b=1
+for ((i=1; i<=terms; i++)); do 
+    echo -n "$a "
+    c=$((a+b))
+    a=$b
+    b=$c
+done
 ```
 ##
 
-### 22) title
+### 22) remove duplicate file
 
 ```shell
-coming...
+if [[ $# -ne 2 ]]; then
+    echo "usage: $0 <file1> <file2>"
+fi
+
+if cmp -s $1 $2; then 
+    echo "Files are same, removing $2"
+    rm $2
+else
+    echo "Files are different"
+fi
 ```
 ##
 
-### 23) title
+### 23) Linux commands with case 
 
 ```shell
-coming...
+PS3="select option : "
+select opt in "list current dir" "print working dir" "date" "user logged in" "exit"; do
+    case $opt in
+        "list current dir")
+            ls
+            ;;
+        "print working dir")
+            pwd
+            ;;
+        "date")
+            date
+            ;;
+        "user logged in")
+            who
+            ;;
+        "exit")
+            exit 0
+            ;;
+        *)
+            echo "invalid option"
+            ;;
+    esac
+done
 ```
 ##
 
-### 24) title
+### 24) giving executable permission
 
 ```shell
-coming...
+for file in *; do 
+    if [[ -f $file && ! -x $file ]]; then
+        echo "$file made executable"
+        chmod u+x $file
+    fi
+done
 ```
 ##
 
-### 25) title
+### 25) number combination
 
 ```shell
-coming...
+for i in 1 2 3; do 
+    for j in 1 2 3; do 
+        for k in 1 2 3; do
+            echo "$i$j$k"
+        done
+    done
+done
 ```
 ##
 
-### 26) title
+### 26) number series 
 
 ```shell
-coming...
+read -p "Enter the number of terms : " terms
+for ((i=1; i<=terms; i++)); do
+    echo "$i"
+done
 ```
 ##
 
@@ -320,21 +373,27 @@ coming...
 ```
 ##
 
-### 28) title
+### 28) binary conversion
 
 ```shell
-coming...
+read -p "Enter a number : " num
+echo "decimal of $num is : $(echo "obase=2; $num" | bc)"
 ```
 ##
 
-### 29) title
+### 29) palindrome
 
 ```shell
-coming...
+read -p "Enter a string : " str
+if [[ $str = $(echo $str | rev) ]]; then
+    echo "$str is palindrome"  
+else
+    echo "$str is not palindrome"  
+fi
 ```
 ##
 
-### 30) title
+### 30) 
 
 ```shell
 coming...
