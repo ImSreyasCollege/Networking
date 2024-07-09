@@ -1,11 +1,12 @@
 function infinate() {
-    read -p "Enter a number : " num
     sum=0
-    for digit in $(echo $num | fold -w1); do
-        sum=$((sum+digit**2))
+    for ((i=50; i<=100; i++)); do
+        if ((i%3 == 0)) && ((i%5 != 0)); then   
+            sum=$((sum+i))
+        fi
     done
-    echo "Sum of squares of digit : $sum"
+    echo "Sum is : $sum"
 }
 
-while true; do infinate; done
+# while true; do infinate; done
 infinate

@@ -136,45 +136,96 @@ done
 ```
 ## 
 
-### 11) title
+### 11) sum of squares of digits in a number 
 
 ```shell
-coming...
+read -p "Enter a number : " num
+sum=0
+for digit in $(echo $num | fold -w1); do
+    sum=$((sum+digit**2))
+done
+echo "Sum of squares of digit : $sum"
 ```
 ##
 
-### 12) title
+### 12) number of vowels in a string
 
 ```shell
-coming...
+read -p "Enter a string : " str
+echo "Number of vowels in the string is : $(echo "$str" | grep -o -i [aeiou] | wc -l)"
 ```
 ##
 
-### 13) title
+### 13) student grade
 
 ```shell
-coming...
+function get_grade() {
+    local grade="unknown"
+    local mark=$1
+    if (( mark < 50 )); then
+        grade="F"
+    elif (( mark < 60 )); then
+        grade="E"
+    elif (( mark < 70 )); then
+        grade="D"
+    elif (( mark < 80 )); then
+        grade="C"
+    elif (( mark < 90 )); then
+        grade="B"
+    elif (( mark <= 100 )); then
+        grade="A"
+    else
+        grade="invalid"
+    fi
+
+    echo $grade
+}
+read -p "Enter the name of the student : " name
+read -p "Enter the mark of the student (in 100) : " mark
+
+echo -e "\nName of the student : $name"
+echo "Mark of the student : $mark"
+echo "Grade of the student : $(get_grade $mark)"
 ```
 ##
 
-### 14) title
+### 14) largest and smallest in a list
 
 ```shell
-coming...
+read -p "Enter numbers separated by spaces : " -a nums
+small=${nums[0]}
+large=${nums[0]}
+for num in ${nums[@]}; do
+    if ((num < small)); then 
+        small=$num
+    fi
+    if ((large < num)); then
+        large=$num
+    fi
+done
+echo "Smallest number is : $small"
+echo "Largest number is : $large"
 ```
 ##
 
-### 15) title
+### 15) smallest digit in a number
 
 ```shell
-coming...
+read -p "Enter a number : " num
+echo "Smallest digit is $(echo $num | grep -o [0-9] | sort | head -n1)"
 ```
 ##
 
-### 16) title
+### 16) sum of numbers divisible by 3 and not 5 b/w 50 and 100
 
 ```shell
-coming...
+sum=0
+for ((i=50; i<=100; i++)); do
+    if ((i%3 == 0)) && ((i%5 != 0)); then   
+        sum=$((sum+i))
+    fi
+done
+echo "Sum is : $sum"
 ```
 ##
 
