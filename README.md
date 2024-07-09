@@ -229,17 +229,25 @@ echo "Sum is : $sum"
 ```
 ##
 
-### 17) title
+### 17) second largest number
 
 ```shell
-coming...
+read -p "Enter numbers separated by spaces : " -a nums
+IFS=$'\n'
+sorted=($(sort -nr <<< "${nums[*]}"))
+echo "Second largest number is : ${sorted[1]}"
 ```
 ##
 
-### 18) title
+### 18) sum of digits
 
 ```shell
-coming...
+read -p "Enter a number : " num
+sum=0
+for digit in $(echo $num | fold -w1); do
+    sum=$((sum+digit))
+done
+echo "Sum is : $sum"
 ```
 ##
 
